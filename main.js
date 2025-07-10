@@ -9,12 +9,10 @@ app.use(express.json());
 app.use(express.static("public"));
 app.use("/Interesting", express.static("Interesting"));
 
-mongoose
-  .connect("mongodb://localhost:27017/Users")
+mongoose.connect("mongodb://localhost:27017/Users")
   .then(() => {
     console.log("connection successfull");
-  })
-  .catch((e) => {
+  }).catch((e) => {
     console.log(`no connection`);
   });
 
